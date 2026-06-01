@@ -1,10 +1,8 @@
 /* =========================================
    petalos.js — Pétalos cayendo en canvas
-   =========================================
-   Usa tu propia imagen de pétalo:
-   Cambia PETAL_SRC por el nombre de tu archivo.
+   ========================================
 
-   Ajustes principales:
+   Ajustes:
    - CANTIDAD      → cuántos pétalos hay en pantalla
    - OPACIDAD_MAX  → qué tan visibles son (0 a 1)
    - VELOCIDAD     → qué tan rápido caen
@@ -94,12 +92,3 @@ img.onerror = () => {
   animar();
 };
 
-/* =========================================
-   TIPS
-   ─────────────────────────────────────────
-   - Cambia PETAL_SRC por el nombre real de tu PNG
-   - Baja CANTIDAD para menos pétalos (más sutil)
-   - Baja OPACIDAD_MAX para pétalos más tenues
-   - Sube TAMANO_MAX para pétalos más grandes
-   - BALANCEO controla el vaivén de lado a lado
-*/
