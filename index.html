@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Fuentes letras -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playball&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Musica de fondo -->
+    <audio id="musica" loop>
+      <source src="music/BTS_I_Need_U_Piano_Cover.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- FONDO -->
+    <div class="escena" id="escena"></div>
+
+    <!-- Petalos  -->
+    <canvas id="petalos-canvas"></canvas>
+
+    <!-- SLIDES -->
+
+    <div class="slides-wrapper">
+      <!-- ── SLIDE 0: Portada ── -->
+      <div class="slide activo" data-index="0">
+        <div class="slide-inner">
+          <p class="Text-Principal">
+            Mis VX Años<br />
+            <span>Jessica</span>
+          </p>
+          <br/>
+          <img src="img/imgaen1.png" alt="quinceañera" class="img-portada">
+        </div>
+      </div>
+
+      <!-- SLIDE 1: PORTADA -->
+      <div class="slide" data-index="1">
+        <div class="slide-inner">
+          <p class="Text-Principal">
+            Mis XV años<br />
+            <span>Jessica</span> <br />
+          </p>
+
+          <p class="etiqueta"></p>
+          <p class="etiqueta"> 
+            <span>
+            Existen momentos en la vida que imaginamos, soñamos y esperamos,
+            unos de esos momentos ha llegado... <br />
+            Deseo compartirlo con las personas que siempre estan presentes en mi
+            vida... <br />
+            Tú eres una de ellas. <br />
+            <br />
+            </span>
+          </p>
+
+          
+        </div>
+      </div>
+
+      <!-- SLIDE 2: PAPAS Y PADRINOS -->
+      <div class="slide" data-index="2">
+        <div class="slide-inner">
+
+          <p class="etiqueta">
+            Con la bendición de Dios <br/> <br/>
+            Y con la compañia de mis Papás: 
+          </p>
+          <h2 class="text-nombres">
+            Pablo Mimientzi 
+            <br/>María Pilar Ahuactzin
+          </h2>
+          <p class="etiqueta">
+            <br/>Y la de mis Padrinos: 
+          </p>
+          <h2 class="text-nombres">
+            Irineo Gutiérrez 
+            <br/>María Ines Mimientzi
+          </h2>
+        </div>
+
+      </div>
+    </div>
+
+      <!-- SLIDE 3: MISA Y RECEPCION -->
+      <!-- Letra bonita &amp; -->
+      <div class="slide" data-index="3">
+        <div class="slide-inner">
+          <p class="etiqueta">Será un honor contar contigo</p>
+          <h2 class="titulo-slide">27 de Junio<br />de 2026</h2>
+          <br/>
+
+          <p class="etiqueta">La Misa será en: <br /></p>
+          <a href="https://maps.app.goo.gl/P3QAJyBBicKkaqga8" class="link-mapa" target="_blank">
+            <i class="fa-solid fa-location-dot"></i>  
+            Ex Convento de San Francisco<br/>Tlaxcala, Tlax
+          </a>
+          <p class="hora"><span>4:00 pm</span></p>
+          <br/>
+
+          <p class="etiqueta">La Recepción será en: <br /></p>
+          <a href="https://maps.app.goo.gl/HTbGti2cJ9Cp9qNy8" class="link-mapa" target="_blank">
+            <i class="fa-solid fa-location-dot"></i>  
+            Salón Jardín Cesar's Palace<br/>Gpe. Ixcotla
+          </a>
+          <p class="hora"><span>5:00 pm</span></p>
+
+        </div>
+      </div>
+
+      <!-- SLIDE 3: CUENTA REGRESIVA -->
+      <div class="slide" data-index="4">
+        <div class="slide-inner">
+          <div class="countdown">
+            <h2 class="titulo-slide">¡Te<br />esperamos!</h2>
+            <br/>
+            <p class="detalle">Faltan</p>
+            <p class="hora"><span id="dias">30</span> días</p>
+            <p class="hora"><span id="horas">24</span> horas</p>
+            <p class="hora"><span id="minutos">60</span> minutos</p>
+            <p class="hora"><span id="segundos">60</span> segundos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /slides-wrapper -->
+
+    <!-- Navegacion -->
+    <nav class="nav-flechas">
+      <button class="flecha" id="btn-prev" aria-label="Anterior">
+        &#8592;
+      </button>
+      <div class="puntos" id="puntos"></div>
+      <button class="flecha" id="btn-next" aria-label="Siguiente">
+        &#8594;
+      </button>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/manchas.js"></script>
+    <script src="js/slides.js"></script>
+    <script src="js/petalos.js"></script>
+    <script src="js/cuentaRegresiva.js"></script>
+    <script src="https://kit.fontawesome.com/e320dce3ec.js" crossorigin="anonymous"></script>
+  </body>
+</html>
