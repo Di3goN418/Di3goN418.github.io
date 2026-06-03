@@ -2,6 +2,8 @@
    VARIABLES — edita aquí para personalizar
    ========================================= */
 :root {
+  color-scheme: only light;
+
   --fondo-color: #ffeefb;
   --mancha-blur: 60px;
   --centro-ancho: 340px;
