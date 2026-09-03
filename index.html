@@ -1,164 +1,216 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="only light">
-    <title>Mis XV años Jessie</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Fuentes letras -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playball&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
 
-    <!-- Pantalla de Carga -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <div class="load-center"  id="onload" >
-      <div class="load"> </div>
-    </div> 
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: white;
 
-    <!-- Musica de fondo -->
-    <audio id="musica" loop>
-      <source src="music/BTS_I_Need_U_Piano_Cover.mp3" type="audio/mpeg">
-    </audio>
+            background:
+                radial-gradient(circle at 20% 20%, #3b176b 0%, transparent 35%),
+                radial-gradient(circle at 80% 80%, #102b68 0%, transparent 35%),
+                #070711;
 
-    <!-- FONDO -->
-    <div class="escena" id="escena"></div>
+            overflow: hidden;
+        }
 
-    <!-- Petalos  -->
-    <canvas id="petalos-canvas"></canvas>
+        /* Brillos de fondo */
+        body::before,
+        body::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.25;
+        }
 
-    <!-- SLIDES -->
+        body::before {
+            background: #8b5cf6;
+            top: -150px;
+            left: -100px;
+        }
 
-    <div class="slides-wrapper">
-      <!-- ── SLIDE 0: Portada ── -->
-      <div class="slide activo" data-index="0">
-        <div class="slide-inner">
-          <p class="Text-Principal">
-            Mis VX Años<br />
-            <span>Jessie</span>
-          </p>
-          <br/>
-          <img src="img/imgaen1.png" alt="quinceañera" class="img-portada">
-        </div>
-      </div>
+        body::after {
+            background: #2563eb;
+            bottom: -150px;
+            right: -100px;
+        }
 
-      <!-- SLIDE 1: PORTADA -->
-      <div class="slide" data-index="1">
-        <div class="slide-inner">
-          <p class="Text-Principal">
-            Mis XV años<br />
-            <span>Jessie</span> <br />
-          </p>
+        .card {
+            position: relative;
+            width: min(700px, 90%);
+            padding: 70px 60px;
 
-          <p class="etiqueta"></p>
-          <p class="etiqueta"> 
-            <span>
-            Existen momentos en la vida que imaginamos, soñamos y esperamos,
-            unos de esos momentos ha llegado... <br />
-            Deseo compartirlo con las personas que siempre estan presentes en mi
-            vida... <br />
-            Tú eres una de ellas. <br />
-            <br />
-            </span>
-          </p>
+            text-align: center;
 
-          
-        </div>
-      </div>
+            background: rgba(15, 15, 30, 0.72);
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            border-radius: 24px;
 
-      <!-- SLIDE 2: PAPAS Y PADRINOS -->
-      <div class="slide" data-index="2">
-        <div class="slide-inner">
+            backdrop-filter: blur(15px);
 
-          <p class="etiqueta">
-            Con la bendición de Dios <br/> <br/>
-            Y con la compañia de mis Papás: 
-          </p>
-          <h2 class="text-nombres">
-            Pablo Mimientzi 
-            <br/>María Pilar Ahuactzin
-          </h2>
-          <p class="etiqueta">
-            <br/>Y la de mis Padrinos: 
-          </p>
-          <h2 class="text-nombres">
-            Irineo Gutiérrez 
-            <br/>María Ines Mimientzi
-          </h2>
-        </div>
+            box-shadow:
+                0 0 40px rgba(124, 58, 237, 0.15),
+                inset 0 0 30px rgba(59, 130, 246, 0.04);
 
-      </div>
-    </div>
+            animation: aparecer 1s ease-out;
+        }
 
-      <!-- SLIDE 3: MISA Y RECEPCION -->
-      <!-- Letra bonita &amp; -->
-      <div class="slide" data-index="3">
-        <div class="slide-inner">
-          <p class="etiqueta">Será un honor contar contigo</p>
-          <h2 class="titulo-slide">27 de Junio<br />de 2026</h2>
-          <br/>
+        /* Pequeña línea decorativa */
+        .line {
+            width: 70px;
+            height: 4px;
+            margin: 0 auto 30px;
 
-          <p class="etiqueta">La Misa será en: <br /></p>
-          <a href="https://maps.app.goo.gl/P3QAJyBBicKkaqga8" class="link-mapa" target="_blank">
-            <i class="fa-solid fa-location-dot"></i>  
-            Ex Convento de San Francisco<br/>Tlaxcala, Tlax
-          </a>
-          <p class="hora"><span>4:00 pm</span></p>
-          <br/>
+            border-radius: 10px;
 
-          <p class="etiqueta">La Recepción será en: <br /></p>
-          <a href="https://maps.app.goo.gl/HTbGti2cJ9Cp9qNy8" class="link-mapa" target="_blank">
-            <i class="fa-solid fa-location-dot"></i>  
-            Salón Jardín Cesar's Palace<br/>Gpe. Ixcotla
-          </a>
-          <p class="hora"><span>5:00 pm</span></p>
+            background: linear-gradient(
+                90deg,
+                #3b82f6,
+                #8b5cf6
+            );
 
-        </div>
-      </div>
+            box-shadow: 0 0 15px #6366f1;
+        }
 
-      <!-- SLIDE 3: CUENTA REGRESIVA -->
-      <div class="slide" data-index="4">
-        <div class="slide-inner">
-          <div class="countdown">
-            <h2 class="titulo-slide">¡Te<br />esperamos!</h2>
-            <br/>
-            <p class="detalle">Faltan</p>
-            <p class="hora"><span id="dias">30</span> días</p>
-            <p class="hora"><span id="horas">24</span> horas</p>
-            <p class="hora"><span id="minutos">60</span> minutos</p>
-            <p class="hora"><span id="segundos">60</span> segundos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /slides-wrapper -->
+        .subtitle {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: 15px;
+        }
 
-    <!-- Navegacion -->
-    <nav class="nav-flechas">
-      <button class="flecha" id="btn-prev" aria-label="Anterior">
-        &#8592;
-      </button>
-      <div class="puntos" id="puntos"></div>
-      <button class="flecha" id="btn-next" aria-label="Siguiente">
-        &#8594;
-      </button>
-    </nav>
+        h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-    <script src="https://kit.fontawesome.com/e320dce3ec.js" crossorigin="anonymous"></script>
-     <script src="js/carga.js"></script>
-    <script src="js/manchas.js"></script>
-    <script src="js/slides.js"></script>
-    <script src="js/petalos.js"></script>
-    <script src="js/cuentaRegresiva.js"></script>
-    
-  </body>
+            background: linear-gradient(
+                90deg,
+                #60a5fa,
+                #a78bfa,
+                #c084fc
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .description {
+            max-width: 520px;
+            margin: auto;
+
+            font-size: 18px;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        /* Decoración */
+        .corner {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-color: #6366f1;
+            opacity: 0.8;
+        }
+
+        .top-left {
+            top: 18px;
+            left: 18px;
+            border-top: 2px solid;
+            border-left: 2px solid;
+        }
+
+        .top-right {
+            top: 18px;
+            right: 18px;
+            border-top: 2px solid;
+            border-right: 2px solid;
+        }
+
+        .bottom-left {
+            bottom: 18px;
+            left: 18px;
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+        }
+
+        .bottom-right {
+            bottom: 18px;
+            right: 18px;
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 50px 25px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card">
+
+        <!-- Decoración -->
+        <span class="corner top-left"></span>
+        <span class="corner top-right"></span>
+        <span class="corner bottom-left"></span>
+        <span class="corner bottom-right"></span>
+
+        <div class="line"></div>
+
+        <!-- Puedes cambiar estos textos -->
+        <div class="subtitle">Presentación</div>
+
+        <h1>ヂィエゴ</h1>
+
+        <p class="description">
+            TICs
+        </p>
+
+    </main>
+
+</body>
 </html>
+
